@@ -6,8 +6,8 @@ const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
 
 const paths = {
     appHtml: resolveApp("config/webpack.config.js/template.html"),
-    clientBuild: resolveApp("build/client"),
-    serverBuild: resolveApp("build/server"),
+    clientBuild: resolveApp("public/client"),
+    serverBuild: resolveApp("public/server"),
     dotenv: resolveApp(".env"),
     src: resolveApp("src"),
     srcClient: resolveApp("src/client"),

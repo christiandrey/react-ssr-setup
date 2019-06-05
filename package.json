@@ -18,7 +18,8 @@
     "lint:css": "stylelint src/**/*.css",
     "lint:deps": "depcruise -c .dependency-cruiser.js src/",
     "plop": "plop",
-    "start": "cross-env NODE_ENV=development node tasks/start.js",
+    "start": "cross-env node public/server/server.js",
+    "dev": "cross-env NODE_ENV=development node tasks/start.js",
     "start:analyzer": "webpack-bundle-analyzer build/client/static/bundle-stats.json",
     "test": "node tasks/test.js --env=jsdom",
     "test:update": "yarn-or-npm test --updateSnapshot"
