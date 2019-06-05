@@ -1,10 +1,9 @@
 import React from 'react';
-import { withTranslation, WithTranslation } from 'react-i18next';
 import css from './Features.module.css';
 
-const Features = ({ t }: WithTranslation) => (
+const Features = () => (
     <React.Fragment>
-        <h2>{t('features')}</h2>
+        <h2>Features</h2>
         <ul className={css.wrapper}>
             <li className={css.webpack}>Webpack 4</li>
             <li className={css.hot}>Babel 7</li>
@@ -18,7 +17,6 @@ const Features = ({ t }: WithTranslation) => (
             <li>Reselect</li>
             <li>React Helmet</li>
             <li>Express Webserver + Server Side Rerendering</li>
-            <li>{t('i18n-support')}</li>
             <li>CSS Modules</li>
             <li>PostCSS</li>
             <li>Prettier (incl. precommit-hook via lint-staged + husky)</li>
@@ -27,4 +25,4 @@ const Features = ({ t }: WithTranslation) => (
     </React.Fragment>
 );
 
-export default withTranslation()(Features);
+export default Features;

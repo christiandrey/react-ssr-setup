@@ -1,11 +1,10 @@
-import React from 'react';
-import { hydrate } from 'react-dom';
-import { Provider } from 'react-redux';
-import { ConnectedRouter as Router } from 'connected-react-router';
-import { configureStore } from '../shared/store';
-import App from '../shared/App';
-import IntlProvider from '../shared/i18n/IntlProvider';
-import createHistory from '../shared/store/history';
+import React from "react";
+import { hydrate } from "react-dom";
+import { Provider } from "react-redux";
+import { ConnectedRouter as Router } from "connected-react-router";
+import { configureStore } from "../shared/store";
+import App from "../shared/App";
+import createHistory from "../shared/store/history";
 
 const history = createHistory();
 
@@ -21,15 +20,13 @@ const store =
 hydrate(
     <Provider store={store}>
         <Router history={history}>
-            <IntlProvider>
-                <App />
-            </IntlProvider>
+            <App />
         </Router>
     </Provider>,
-    document.getElementById('app')
+    document.getElementById("app")
 );
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
     if (module.hot) {
         module.hot.accept();
     }
