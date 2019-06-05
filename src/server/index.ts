@@ -1,17 +1,15 @@
 // import React from 'react';
-import path from "path";
 import * as express from "express";
+import path from "path";
 import cors from "cors";
 import chalk from "chalk";
 import manifestHelpers from "express-manifest-helpers";
 import bodyParser from "body-parser";
 import paths from "../../config/paths";
-// import { configureStore } from '../shared/store';
-// import createHistory from '../shared/store/history';
 import errorHandler from "./middleware/errorHandler";
 import serverRenderer from "./middleware/serverRenderer";
-import configure_store from "../shared/redux/store";
-import create_universal_history from "../shared/redux/store/history";
+import configure_store from "../common/redux/store";
+import create_universal_history from "../common/redux/store/history";
 
 require("dotenv").config();
 

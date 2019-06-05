@@ -1,13 +1,10 @@
 import React from "react";
+import configure_store from "../common/redux/store";
+import create_universal_history from "../common/redux/store/history";
+import Counter from "../common/redux/containers/Counter";
 import { hydrate } from "react-dom";
 import { Provider } from "react-redux";
 import { ConnectedRouter as Router } from "connected-react-router";
-// import { configureStore } from "../shared/store";
-// import App from "../shared/App";
-import configure_store from "../shared/redux/store";
-import create_universal_history from "../shared/redux/store/history";
-import Counter from "../shared/redux/containers/Counter";
-// import createHistory from "../shared/store/history";
 
 const history = create_universal_history();
 

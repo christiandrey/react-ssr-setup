@@ -1,38 +1,34 @@
-const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
-const paths = require('../paths');
-const { client: clientLoaders } = require('./loaders');
-const resolvers = require('./resolvers');
-const plugins = require('./plugins');
-const generateSourceMap = process.env.OMIT_SOURCEMAP === 'true' ? false : true;
+const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
+const paths = require("../paths");
+const { client: clientLoaders } = require("./loaders");
+const resolvers = require("./resolvers");
+const plugins = require("./plugins");
+const generateSourceMap = process.env.OMIT_SOURCEMAP === "true" ? false : true;
 
 module.exports = {
-    name: 'client',
-    target: 'web',
+    name: "client",
+    target: "web",
     entry: {
-        bundle: [
-            require.resolve('core-js/stable'),
-            require.resolve('regenerator-runtime/runtime'),
-            paths.srcClient,
-        ],
+        bundle: [require.resolve("core-js/stable"), require.resolve("regenerator-runtime/runtime"), paths.srcClient],
     },
     output: {
         path: path.join(paths.clientBuild, paths.publicPath),
-        filename: 'bundle.js',
+        filename: "bundle.js",
         publicPath: paths.publicPath,
-        chunkFilename: '[name].[chunkhash:8].chunk.js',
+        chunkFilename: "[name].[chunkhash:8].chunk.js",
     },
     module: {
         rules: clientLoaders,
     },
     resolve: { ...resolvers },
-    plugins: [...plugins.shared, ...plugins.client],
+    plugins: [...plugins.common, ...plugins.client],
     node: {
-        dgram: 'empty',
-        fs: 'empty',
-        net: 'empty',
-        tls: 'empty',
-        child_process: 'empty',
+        dgram: "empty",
+        fs: "empty",
+        net: "empty",
+        tls: "empty",
+        child_process: "empty",
     },
     optimization: {
         minimizer: [
@@ -86,8 +82,8 @@ module.exports = {
             cacheGroups: {
                 commons: {
                     test: /[\\/]node_modules[\\/]/,
-                    name: 'vendor',
-                    chunks: 'all',
+                    name: "vendor",
+                    chunks: "all",
                 },
             },
         },

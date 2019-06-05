@@ -1,21 +1,17 @@
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
 
-const paths = require('../paths');
-const { server: serverLoaders } = require('./loaders');
-const resolvers = require('./resolvers');
-const plugins = require('./plugins');
+const paths = require("../paths");
+const { server: serverLoaders } = require("./loaders");
+const resolvers = require("./resolvers");
+const plugins = require("./plugins");
 
 module.exports = {
-    name: 'server',
-    target: 'node',
+    name: "server",
+    target: "node",
     entry: {
         // server: [path.resolve(paths.srcServer, 'index.js')],
-        server: [
-            require.resolve('core-js/stable'),
-            require.resolve('regenerator-runtime/runtime'),
-            path.resolve(paths.srcServer, 'index.ts'),
-        ],
+        server: [require.resolve("core-js/stable"), require.resolve("regenerator-runtime/runtime"), path.resolve(paths.srcServer, "index.ts")],
     },
     externals: [
         nodeExternals({
@@ -26,7 +22,7 @@ module.exports = {
     ],
     output: {
         path: paths.serverBuild,
-        filename: 'server.js',
+        filename: "server.js",
         publicPath: paths.publicPath,
         // libraryTarget: 'commonjs2',
     },
@@ -34,7 +30,7 @@ module.exports = {
     module: {
         rules: serverLoaders,
     },
-    plugins: [...plugins.shared, ...plugins.server],
+    plugins: [...plugins.common, ...plugins.server],
     stats: {
         colors: true,
     },

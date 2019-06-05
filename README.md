@@ -8,7 +8,7 @@
 
 **Advertising**: I wrote a book about React. If you speak German, buy it here: [https://leanpub.com/react-lernen](https://leanpub.com/react-lernen)!
 
-[![](./src/shared/assets/book-cover-small.png)](https://leanpub.com/react-lernen)
+[![](./src/common/assets/book-cover-small.png)](https://leanpub.com/react-lernen)
 
 ## TOC
 
