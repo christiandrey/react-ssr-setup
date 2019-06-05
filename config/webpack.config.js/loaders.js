@@ -3,7 +3,6 @@ const generateSourceMap = process.env.OMIT_SOURCEMAP === "true" ? false : true;
 const getCSSModuleLocalIdent = require("react-dev-utils/getCSSModuleLocalIdent");
 
 const cssRegex = /\.scss|\.css$/;
-// const cssModuleRegex = /\.module\.css$/;
 
 const babelLoader = {
     test: /\.(js|jsx|ts|tsx|mjs)$/,
@@ -28,31 +27,6 @@ const babelLoader = {
     },
 };
 
-// const cssModuleLoaderClient = {
-//     test: cssModuleRegex,
-//     use: [
-//         require.resolve('css-hot-loader'),
-//         MiniCssExtractPlugin.loader,
-//         {
-//             loader: require.resolve('css-loader'),
-//             options: {
-//                 camelCase: true,
-//                 modules: true,
-//                 importLoaders: 1,
-//                 sourceMap: generateSourceMap,
-//                 // localIdentName: '[name]__[local]--[hash:base64:5]',
-//                 getLocalIdent: getCSSModuleLocalIdent,
-//             },
-//         },
-//         {
-//             loader: require.resolve('postcss-loader'),
-//             options: {
-//                 sourceMap: generateSourceMap,
-//             },
-//         },
-//     ],
-// };
-
 const cssLoaderClient = {
     test: cssRegex,
     use: [
@@ -73,29 +47,6 @@ const cssLoaderClient = {
         },
     ],
 };
-
-// const cssModuleLoaderServer = {
-//     test: cssModuleRegex,
-//     use: [
-//         {
-//             loader: require.resolve('css-loader'),
-//             options: {
-//                 exportOnlyLocals: true,
-//                 camelCase: true,
-//                 importLoaders: 1,
-//                 modules: true,
-//                 // localIdentName: '[name]__[local]--[hash:base64:5]',
-//                 getLocalIdent: getCSSModuleLocalIdent,
-//             },
-//         },
-//         {
-//             loader: require.resolve('postcss-loader'),
-//             options: {
-//                 sourceMap: generateSourceMap,
-//             },
-//         },
-//     ],
-// };
 
 const cssLoaderServer = {
     test: cssRegex,
