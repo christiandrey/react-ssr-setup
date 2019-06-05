@@ -4,14 +4,15 @@ import { renderToString } from "react-dom/server";
 import { StaticRouter as Router } from "react-router-dom";
 import { Store } from "redux";
 import { Provider } from "react-redux";
-import App from "../../shared/App";
+// import App from "../../shared/App";
 import Html from "../components/HTML";
+import Counter from "../../shared/redux/containers/Counter";
 
 const serverRenderer: any = () => (req: express.Request & { store: Store }, res: express.Response) => {
     const content = renderToString(
         <Provider store={res.locals.store}>
             <Router location={req.url} context={{}}>
-                <App />
+                <Counter />
             </Router>
         </Provider>
     );
