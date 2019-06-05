@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('../paths');
-const { clientOnly } = require('../../scripts/utils');
+const { clientOnly } = require('../../tasks/utils');
 
 const env = require('../env')();
 
