@@ -1,7 +1,7 @@
+import "./counter.scss";
 import React from "react";
-import Features from "../../shared/Features";
+import Features from "../../shared/Features/Features";
 import Helmet from "react-helmet";
-import css from "./Counter.module.css";
 import favicon from "../../../assets/favicon.png";
 import { ReactComponent as ReactLogo } from "../../../assets/react.svg";
 
@@ -14,14 +14,14 @@ export type CounterProps = {
 const Counter = (props: CounterProps) => {
     const { value, increment_counter, decrement_counter } = props;
     return (
-        <div className={css.wrapper}>
+        <div className="wrapper">
             <Helmet
                 defaultTitle="React SSR Starter – TypeScript Edition"
                 titleTemplate="%s – React SSR Starter – TypeScript Edition"
                 link={[{ rel: "icon", type: "image/png", href: favicon }]}
             />
             <h1>
-                <ReactLogo className={css.reactLogo} /> React + Express – SSR Starter – TypeScript Edition
+                <ReactLogo className="reactLogo" /> React + Express – SSR Starter – TypeScript Edition
             </h1>
             <Features />
             <div>Counter value is {value}</div>

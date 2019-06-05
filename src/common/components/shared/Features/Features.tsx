@@ -1,16 +1,16 @@
-import React from 'react';
-import css from './Features.module.css';
+import "./features.scss";
+import React from "react";
 
 const Features = () => (
     <React.Fragment>
         <h2>Features</h2>
-        <ul className={css.wrapper}>
-            <li className={css.webpack}>Webpack 4</li>
-            <li className={css.hot}>Babel 7</li>
-            <li className={css.hot}>ESLint 5</li>
-            <li className={css.hot}>TypeScript (using Babel 7)</li>
-            <li className={css.hot}>Jest 24</li>
-            <li className={css.react}>React 16.x (latest)</li>
+        <ul className="wrapper">
+            <li className="webpack">Webpack 4</li>
+            <li className="hot">Babel 7</li>
+            <li className="hot">ESLint 5</li>
+            <li className="hot">TypeScript (using Babel 7)</li>
+            <li className="hot">Jest 24</li>
+            <li className="react">React 16.x (latest)</li>
             <li>React Router 4</li>
             <li>Redux (+ Thunk)</li>
             <li>Immer</li>
